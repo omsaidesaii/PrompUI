@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
 import Select from 'react-select';
 import { BsStars } from 'react-icons/bs';
 import { HiOutlineCode } from 'react-icons/hi';
+import Editor from '@monaco-editor/react';
 
 const Home = () => {
 
@@ -15,8 +16,10 @@ const Home = () => {
   { value: 'html-tailwind-bootstrap', label: 'HTML + Tailwind + Bootstrap' },
 ];
 
+  const [outputScreen, setOutputScreen] = useState(false)
+
   return (
-    <div>
+    <>
         <Navbar/>
         <div className="flex items-center px-[100px] gap-[30px] justify-between">
           <div className="left w-[50%] h-[auto] py-[30px] rounded-xl bg-[#141319] mt-5 p-[20px]">
@@ -62,16 +65,21 @@ const Home = () => {
           <button className='generate flex items-center p-[15px] rounded-lg border-0 bg-gradient-to-r from-purple-400 to-purple-600 mt-3 px-[20px] cursor-pointer gap-[10px] transition-all hover:opacity-[.8]'><i> <BsStars/> </i> Generate</button>
          </div>
         </div>
-        <div className="right w-[50%] h-[80vh] bg-[#141319] mt-5 rounded-xl">
-          <div className='skeleton w-full h-full flex items-center flex-col justify-center'>
+        <div className="right w-[50%] h-[80vh] bg-[#141319] mt-2 rounded-xl">
+          {
+              outputScreen===false?
+              <>
+            <div className='skeleton w-full h-full flex items-center flex-col justify-center'>
               <div className="circle p-[20px] w-[70px] h-[70px] rounded-[50%] bg-gradient-to-r from-purple-400 to-purple-600 flex items-center justify-center text-[30px]"><HiOutlineCode/></div>
-
-              <p className='text-[16px] text-[gray] mt-3'>Your component & code will appear here.</p>
-
+             <p className='text-[16px] text-[gray] mt-3'>Your component & code will appear here.</p>
           </div>
+              </>: <>
+              <Editor height="100%" defaultLanguage="javascript" defaultValue="//some comment" />
+              </>
+          }
         </div>
         </div>
-    </div>
+    </>
   )
 }
 
