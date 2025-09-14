@@ -82,7 +82,7 @@ const Home = () => {
       <Navbar />
       <div className="flex px-4 sm:px-8 md:px-[60px] gap-4 md:gap-10 justify-between flex-col md:flex-row">
         {/* Left Panel */}
-        <div className="w-full md:w-1/2 py-6 md:py-8 px-3 md:px-6 rounded-2xl bg-gradient-to-b from-[#1a191f] to-[#141319] shadow-lg mt-4 md:mt-6 border border-zinc-800">
+        <div className="w-full  md:w-1/2 py-6 md:py-8 px-3 md:px-6 rounded-2xl bg-gradient-to-b from-[#1a191f] to-[#141319] shadow-lg mt-4 md:mt-6 border border-zinc-800">
           <h3 className="text-2xl md:text-3xl font-bold sp-text">AI Component Generator</h3>
           <p className="text-gray-400 mt-2 md:mt-3 text-base md:text-lg leading-relaxed">
             Describe your component, choose a framework, and let AI generate modern UI code.

@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="nav w-full bg-[#141319] border-b-[1px] border-gray-800 px-4 md:px-[100px] py-4 flex items-center justify-between">
+    <div className="nav w-full bg-[#141319] border-b-[1px] border-gray-800 px-4 md:px-[100px] py-2 flex items-center justify-between">
       <div className="logo">
         <h1 className="text-[25px] font-[700] sp-text ">PrompUI</h1>
       </div>
